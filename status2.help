@@ -1,0 +1,19 @@
+const Discord = require('discord.js')
+const config = require('../config.json')
+
+module.exports.run = async(client, message, args) => {
+    message.delete()
+    
+const { dono } = require("../config.json");
+if (!dono.includes(message.author.id)) return message.send("");
+
+if(!message.content.startsWitch(config.prefix == "status")){
+    let embedrs = new Discord.RichEmbed()
+    .setTitle(`Status - ${message.author.tag}`)
+    .setColor('#FF4400')
+    .addField(`${config.prefix}playing`, "`Ira criar um status no estilo Playing`")
+    .addField(`${config.prefix}listening`, "`Ira criar um status no estilo listening`")
+    .addField(`${config.prefix}watching`, "`Ira criar um status no estilo Watching`")
+    .addField(`${config.prefix}streaming`, "`Ira criar um status no estilo Streaming`")
+}
+}
